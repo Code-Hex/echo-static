@@ -14,7 +14,7 @@ import (
 func main() {
     e := echo.New()
 
-    r.Use(static.ServeRoot("/static", NewAssets("assets")))
+    e.Use(static.ServeRoot("/static", NewAssets("assets")))
     e.GET("/ping", func(c echo.Context) error {
         return c.String(200, "test")
     })
