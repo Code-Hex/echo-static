@@ -1,10 +1,10 @@
 echo-static
 ====
-[![Build Status](https://travis-ci.org/Code-Hex/echo-static.svg?branch=master)](https://travis-ci.org/Code-Hex/echo-static)  
-[![Coverage Status](https://coveralls.io/repos/github/Code-Hex/echo-static/badge.svg?branch=master)](https://coveralls.io/github/Code-Hex/echo-static?branch=master)  
-[![Go Report Card](https://goreportcard.com/badge/github.com/Code-Hex/echo-static)](https://goreportcard.com/report/github.com/Code-Hex/echo-static)  
-[![GoDoc](https://godoc.org/github.com/Code-Hex/echo-static?status.svg)](https://godoc.org/github.com/Code-Hex/echo-static)  
-[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)  
+[![Build Status](https://travis-ci.org/Code-Hex/echo-static.svg?branch=master)](https://travis-ci.org/Code-Hex/echo-static)
+[![Coverage Status](https://coveralls.io/repos/github/Code-Hex/echo-static/badge.svg?branch=master)](https://coveralls.io/github/Code-Hex/echo-static?branch=master)
+[![Go Report Card](https://goreportcard.com/badge/github.com/Code-Hex/echo-static)](https://goreportcard.com/report/github.com/Code-Hex/echo-static)
+[![GoDoc](https://godoc.org/github.com/Code-Hex/echo-static?status.svg)](https://godoc.org/github.com/Code-Hex/echo-static)
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 # SYNOPSIS
 ```go
 package main

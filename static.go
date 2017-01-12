@@ -10,6 +10,7 @@ import (
 
 const version = "0.0.1"
 
+// ServeFileSystem
 type ServeFileSystem interface {
 	http.FileSystem
 	Exists(prefix string, path string) bool
@@ -50,8 +51,10 @@ func Serve(urlPrefix string, fs ServeFileSystem) echo.MiddlewareFunc {
 	return func(before echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) error {
 			err := before(c)
-			if err != nil && err.Error() != http.StatusText(http.StatusNotFound) {
-				return err
+			if err != nil {
+				if c, ok := err.(*echo.HTTPError); !ok || c.Code != http.StatusNotFound {
+					return err
+				}
 			}
 
 			w, r := c.Response(), c.Request()
