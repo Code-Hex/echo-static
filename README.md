@@ -31,7 +31,10 @@ func NewAssets(root string) *assetfs.AssetFS {
 	}
 }
 ```
+and put your asset file in the `assets` directory and execute the following code before compile it.
 
+    go-bindata -o bindata.go assets/...
+	
 # DESCRIPTION
 
 echo-static is File server middleware for [go-bindata](https://github.com/jteeuwen/go-bindata) and [echo](https://github.com/labstack/echo).
