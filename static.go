@@ -14,6 +14,7 @@ type ServeFileSystem interface {
 	http.FileSystem
 	Exists(prefix string, path string) bool
 }
+
 type binaryFileSystem struct {
 	fs http.FileSystem
 }
@@ -37,11 +38,11 @@ func BinaryFileSystem(fs *assetfs.AssetFS) *binaryFileSystem {
 }
 
 func ServeRoot(urlPrefix string, fs *assetfs.AssetFS) echo.MiddlewareFunc {
-	return serve(urlPrefix, BinaryFileSystem(fs))
+	return Serve(urlPrefix, BinaryFileSystem(fs))
 }
 
-// Static returns a middleware handler that serves static files in the given directory.
-func serve(urlPrefix string, fs ServeFileSystem) echo.MiddlewareFunc {
+// Serve Static returns a middleware handler that serves static files in the given directory.
+func Serve(urlPrefix string, fs ServeFileSystem) echo.MiddlewareFunc {
 	fileserver := http.FileServer(fs)
 	if urlPrefix != "" {
 		fileserver = http.StripPrefix(urlPrefix, fileserver)
@@ -58,7 +59,7 @@ func serve(urlPrefix string, fs ServeFileSystem) echo.MiddlewareFunc {
 				fileserver.ServeHTTP(w, r)
 				return nil
 			}
-			return c.String(http.StatusNotFound, http.StatusText(http.StatusNotFound))
+			return err
 		}
 	}
 }
