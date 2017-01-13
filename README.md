@@ -11,8 +11,9 @@ package main
 
 import (
     static "github.com/Code-Hex/echo-static"
-
-    "github.com/labstack/echo"
+ 
+    assetfs "github.com/elazarl/go-bindata-assetfs"
+    "github.com/labstack/echo"
 )
 
 func main() {
